@@ -46,7 +46,15 @@ bundle/projects/eth-monitor.md: frontmatter needs a non-empty type
 
 Put the line back. Then try renaming a concept: every link to it is reported as broken.
 
-**4. Add your own concept.** Create `bundle/practices/my-practice.md`:
+**4. Ask Claude a question.** You need [Claude Code](https://claude.com/claude-code). Run this from this folder, so Claude picks up [`CLAUDE.md`](CLAUDE.md), which tells it to read the bundle first:
+
+```bash
+claude -p "How do I run invoice-reminders locally?"
+```
+
+This is question 2 from [`demo/questions.md`](demo/questions.md); try the others too. The answer should give the exact `docker compose` command and ports from `bundle/projects/invoice-reminders.md`. To see what Claude says without the bundle, read [`demo/results.md`](demo/results.md).
+
+**5. Add your own concept.** Create `bundle/practices/my-practice.md`:
 
 ```markdown
 ---
@@ -59,13 +67,9 @@ Say what to do. Link to something related: [AI agents](../topics/ai-agents.md).
 
 Add a line for it to [`bundle/index.md`](bundle/index.md), so agents can find it, and run the validator.
 
-**5. Ask Claude a question from [`demo/questions.md`](demo/questions.md).** [`CLAUDE.md`](CLAUDE.md) tells Claude to read the bundle first.
+## Coming from a blog?
 
-```bash
-claude -p "How do I run invoice-reminders locally?"
-```
-
-Compare your answer with [`demo/results.md`](demo/results.md), which shows real runs with and without the bundle. To see how a blog post differs from a concept, read [`demo/jekyll-vs-okf.md`](demo/jekyll-vs-okf.md).
+Already have a Jekyll blog? See [`demo/jekyll-vs-okf.md`](demo/jekyll-vs-okf.md) for what changes when a post becomes a concept.
 
 ## Next steps
 
